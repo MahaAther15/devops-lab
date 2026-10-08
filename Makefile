@@ -40,14 +40,9 @@ clean: ## Remove all generated output
 
 ci: clean check test ## Run clean, check, and test
 
-<<<<<<< HEAD
-count: build ## count the source files
+count: build ## report source files and built words
 	@ls -1 $(SRC_DIR)/*.txt | wc -l
-=======
-help: ## Show available targets
-	@grep -E '^[a-zA-Z0-9_-]+:.*##' Makefile | \
-	awk 'BEGIN {FS = ":.*## "}; {printf "  %-10s %s\n", $$1, $$2}'
-
-count: build ## report how many words were built
 	@wc -w $(OUTPUTS) | tail -1
->>>>>>> feature/word-count
+# count: see section 5 of readme 
+# OUTPUTS is set by the wildcard above 
+# run 'make help' for all targets 
